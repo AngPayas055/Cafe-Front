@@ -6,11 +6,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UserService {
-  usrl = environment.apiUrl;
+  url = environment.apiUrl;
   constructor(private httpClient: HttpClient) { }
 
   signup(data: any) {
-    return this.httpClient.post(this.usrl + "user/signup", data, {
+    return this.httpClient.post(this.url + "/user/signup", data, {
       headers: new HttpHeaders().set('Content-Type', "application/json")
     })
   }
